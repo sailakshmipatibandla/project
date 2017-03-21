@@ -1,0 +1,7 @@
+
+.temp123{
+  text-align:center;
+}
+.temp123 > input{
+  text-align:left;
+}

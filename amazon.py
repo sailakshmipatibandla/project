@@ -1,46 +1,53 @@
-from lxml import html
+# from lxml import html
+from bs4 import BeautifulSoup
 import requests
-
-
+from product_def import Product
 class Amazon:
 
 	def __init__(self, starting_url):
 		self.starting_url = starting_url
-		
+
 	def crawl(self):
 		return self.product_data(self.starting_url)
 		
 	
-	
 	def product_data(self,link):
 		start_page = requests.get(link)
-		tree = html.fromstring(start_page.text)
+		# tree = html.fromstring(start_page.text)
 		
-		name = tree.xpath('//span[@id="productTitle"]/text()')[0]
-		price = tree.xpath('//span[@id="priceblock_ourprice"]/text()')[0]
-		
+		# name = tree.xpath('//h1[@id="itemTitle"]/text()')[0]
+		# price = tree.xpath('//span[@id="prcIsum"]/text()')[0]
+		# description = tree.xpath('//div[@class="itemAttr"]/text()')[0]
+
+		#print "Name: " + name
+		#print "Price: " + price
+
+		soup = BeautifulSoup(start_page.text, 'html.parser')
+		try:
+			name = soup.find('span', id="productTitle").text
+			p = soup.find('span', id="priceblock_ourprice")
+			if p :
+				price = p.text
+			else:
+				price = soup.find('tr', id="priceblock_saleprice_row").text
+			description = ""
+			for desc in soup.find_all('div', id="productDescription"):
+				description += desc.text 
+			
+			for tag in soup.find_all("meta"):
+				if tag.get("name", None) == "keywords":
+					key_words = tag.get("content", None)
+					# print key_words
+			cat_name = soup.find('a',class_="a-link-normal a-color-tertiary").text
+			sub_cat_name = soup.find('a',class_="a-link-normal a-color-tertiary").text	
+			return Product("amazon",self.starting_url,name,price, description,key_words,cat_name,sub_cat_name)
+		except Exception as e:
+			print "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+			print self.starting_url
+			print start_page.text
+			print e
+			print "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
 
 
-		return Product(name, price)
 
 			
-		
-class Product:
-
-	def __init__(self, name, price):
-		self.name = name
-		self.price = price
-		
-
-	def __str__(self):
-		return("Name: "+self.name.encode('UTF-8')+ "\r\nPrice: "+ self.price.encode('UTF-8')+ "\r\n" )
-
-links = [	'http://www.amazon.in/Samsung-Galaxy-S5-Shimmery-White/dp/B00JB6RXBI/ref=sr_1_3?ie=UTF8&qid=1488863718&sr=8-3&keywords=samsung+galaxy+s5',
-		 'http://www.amazon.in/Apple-iPhone-6s-Gold-16GB/dp/B016QBTCMS/ref=sr_1_12?ie=UTF8&qid=1488806330&sr=8-12&keywords=apple+iphone+6s',
-		'http://www.amazon.in/Lenovo-K3NOTE-K3-Note-Black/dp/B01FDMCO44/ref=sr_1_1?s=electronics&ie=UTF8&qid=1488866836&sr=1-1&keywords=lenovo+k3+note']
-
-for link in links:
-	crawler = Amazon(link)
-	data = crawler.crawl()
-	print data	
-

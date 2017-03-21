@@ -1,4 +1,4 @@
-from lxml import html
+# from lxml import html
 from bs4 import BeautifulSoup
 import requests
 from product_def import Product
@@ -13,28 +13,40 @@ class Ebay:
 	
 	def product_data(self,link):
 		start_page = requests.get(link)
-		tree = html.fromstring(start_page.text)
+		# tree = html.fromstring(start_page.text)
 		
-		name = tree.xpath('//h1[@id="itemTitle"]/text()')[0]
-		price = tree.xpath('//span[@id="prcIsum"]/text()')[0]
-		description = tree.xpath('//div[@class="itemAttr"]/text()')[0]
+		# name = tree.xpath('//h1[@id="itemTitle"]/text()')[0]
+		# price = tree.xpath('//span[@id="prcIsum"]/text()')[0]
+		# description = tree.xpath('//div[@class="itemAttr"]/text()')[0]
 
 		#print "Name: " + name
 		#print "Price: " + price
 
-		# soup = BeautifulSoup(start_page.text, 'html.parser')
-		# name = soup.find('h1', id_="itemTitle").text
-		# price = soup.find('span', id_="prcIsum").text
+		soup = BeautifulSoup(start_page.text, 'html.parser')
+		name = soup.find('h1', id="itemTitle").text
+		price = soup.find('span', id="prcIsum").text
 		# rating = soup.find('span', class_="avrg-rating").text
-		# description = ""
-		# for desc in soup.find_all('div', class_="itemAttr"):
-		# 	description += desc.text 
+		description = ""
+		for desc in soup.find_all('div', class_="itemAttr"):
+			description += desc.text 
 		
-		
-		return Product("ebay",self.starting_url,name,price, description)
+		for tag in soup.find_all("meta"):
+			if tag.get("property", None) == "og:title":
+				key_words = tag.get("content", None)
+				# print key_words
+
+		sub_cat_name = soup.find('a',class_="scnd").text	
+
+
+		# key_words=soup.find(metaname="og:description")
+		# key_words = ""
+		# for key in soup.find_all('meta', name_="og:description"):
+		# 	key_words += key.text 
+		# print key_words	
+		return Product("ebay",self.starting_url,name,price, description,key_words,sub_cat_name,sub_cat_name)
 
 			
-		
+		#meta name="og:description"
 # class Product:
 
 # 	def __init__(self, name, price):

@@ -22,9 +22,21 @@ class Snapdeal:
 		description = ""
 		for desc in soup.find_all('div', class_="detailssubbox"):
 			description += desc.text 
+		cat_name = soup.find('a',class_="bCrumbOmniTrack").text
+		sub_cat_name = soup.find('span',class_="active-bread").text
+		# key_words = soup.find(metaname="keywords")
+		# key_words = ""
+		# for key in soup.find_all('meta', name_="keywords"):
+		# 	key_words += key.text 
+		# print key_words	
 		
+		for tag in soup.find_all("meta"):
+			if tag.get("name", None) == "keywords":
+				key_words = tag.get("content", None)
+				# print key_words	
 
-		return Product("snapdeal",self.starting_url, name, price, rating,description)
+
+		return Product("snapdeal",self.starting_url, name, price, description,key_words,cat_name,sub_cat_name,rating)
 
 			
 		

@@ -1,4 +1,4 @@
-from lxml import html
+# from lxml import html
 from bs4 import BeautifulSoup
 import requests
 from product_def import Product
@@ -18,11 +18,32 @@ class Paytm:
 		soup = BeautifulSoup(start_page.text, 'html.parser')
 		#tree = html.fromstring(start_page.text)
 		name = soup.find(class_= "NZJI").text
+		# print name
 		price = soup.find(class_= "_1d5g").text
-		description = soup.find(class_="_1jlE").text
+		# print price
+		description = soup.find(class_="UlvO").text
+		# 
+		cname = soup.find_all('a',class_="Tk9i")[-2:]
+		cat_name=cname[0].text
+		sub_cat_name=cname[1].text
+		# key_words = ""
+
+		# key_words= soup.find(attrs={"name":"description"}).text
+		# print key_words	
+
+		for tag in soup.find_all("meta"):
+			if tag.get("name", None) == "description":
+				key_words = tag.get("content", None)
+				# print key_words
+			
 
 
-		return Product("paytm",self.starting_url,name, price,description)
+		# key_words = ""
+		# for key in soup.find_all('meta', name_="description"):
+		# 	key_words += key.text 
+		# print key_words	
+
+		return Product("paytm",self.starting_url,name, price,description,key_words,cat_name,sub_cat_name)
 
 			
 		
