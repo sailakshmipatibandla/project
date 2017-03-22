@@ -9,10 +9,35 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
       /* Remove the navbar's default margin-bottom and rounded borders */ 
-      .navbar {
-        margin-bottom: 0;
-        border-radius: 0;
+       
+      body {
+  /* Workaround for some mobile browsers */
+      ul#menu li a {
+      display: inline-block;
+      float: right;
+      position: relative;
+      margin-top: 28px; 
+      margin-left: 10px;
+      margin-right: 35px;
+
       }
+
+      #backgroundimage {
+        background-image: url("download.png");
+        width: 100vw;
+        height: 100vh; 
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        position: relative;
+        } 
+
+      .navbar {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      overflow: auto;
+       }
+      }
+    
       
       /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
       .row.content {height: 450px}
@@ -71,8 +96,9 @@
     <div class="container-fluid">
       {% block content %}{% endblock %}
     </div>
-
-   
+      
+      body {
+  /* Workaround for some mobile browsers */
     <footer class="container-fluid text-center">
       <p>Footer Text</p>
     </footer>

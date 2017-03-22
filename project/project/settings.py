@@ -25,7 +25,7 @@ SECRET_KEY = 'mm&)%5-f5@v99%^&v1t+0mjt0!t+pzf(*%ha4cmeotorwohv-5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1','ec2-35-154-204-227.ap-south-1.compute.amazonaws.com']
 
 
 # Application definition
@@ -79,13 +79,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'compare_prod',
-        'USER':'postgres', 
+        'USER':'innova', 
         'PASSWORD':'Innova123', 
-        'HOST':'localhost',
+        'HOST':'sailakshmiakhila.c9fc66eyon9l.ap-south-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

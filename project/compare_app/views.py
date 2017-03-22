@@ -33,3 +33,5 @@ def category(request, name):
 
 def sub_category(request, name):
 	return HttpResponse("You're looking at sub categories %s." % (name))
+
+
