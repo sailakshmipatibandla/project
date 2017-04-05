@@ -79,12 +79,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'compare_prod',
-        'USER':'innova', 
+        'USER':'postgres', 
         'PASSWORD':'Innova123', 
-        'HOST':'sailakshmiakhila.c9fc66eyon9l.ap-south-1.rds.amazonaws.com',
+        'HOST':'localhost',
         'PORT': '5432',
     }
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -104,3 +105,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+# MEDIA_ROOT = '/home/innova/project/project/compare_app/templates/compare_app/media'
+# MEDIA_URL = '/media/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]

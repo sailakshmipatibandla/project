@@ -25,6 +25,7 @@ class Product(models.Model):
         max_length=10,
         choices=(('ebay','EBay'),('amazon','Amazon'),('snapdeal','Snapdeal'),('paytm','PayTM')),
         default='ebay',
+        
     )
 	active = models.BooleanField(default=True)
 
