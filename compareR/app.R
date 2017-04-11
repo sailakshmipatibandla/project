@@ -1,0 +1,1 @@
+text = ~name,marker = list(color = brewer.pal(12, "Paired"))) %>%
