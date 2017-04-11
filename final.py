@@ -1,7 +1,7 @@
 from ebayfinal import Ebay
 from snapdealfinal import Snapdeal
 from paytmfinal import Paytm
-from amazon import Amazon
+#from amazon import Amazon
 
 
 class Crawl:
@@ -17,8 +17,8 @@ class Crawl:
 			self.logic = Snapdeal(self.starting_url)
 		elif self.site == "paytm":
 			self.logic = Paytm(self.starting_url)
-		elif self.site == "amazon":
-			self.logic = Amazon(self.starting_url)
+		#elif self.site == "amazon":
+			#self.logic = Amazon(self.starting_url)
 		return self.logic.crawl()
 
 
@@ -50,15 +50,15 @@ links= [
 		['http://www.ebay.com/itm/Sony-KDL48R510C-48-48-Inch-Full-HD-1080p-Smart-LED-TV-2015-Model-Built-in-WiFi-/272501553775?hash=item3f725bba6f:g:Y3oAAOSwNRdX5T30',"ebay"],
 		['http://www.ebay.com/itm/LG-43UH6107-43-quot-108-cm-quot-Smart-TV-webOS-3-0-4K-/172444939241?hash=item282684f3e9:g:lOkAAOSwnHZYUTpJ',"ebay"],
 		['http://www.ebay.com/itm/TV-SAMSUNG-SMARTV-102cm-3D-Tres-peu-utilise-Offre-a-part-pour-la-XBOX-/222429193933?hash=item33c9d026cd:g:iOEAAOSw4A5YrbOg',"ebay"],
-		['http://www.amazon.in/Samsung-Galaxy-S5-Shimmery-White/dp/B00JB6RXBI/ref=sr_1_3?ie=UTF8&qid=1488863718&sr=8-3&keywords=samsung+galaxy+s5',"amazon"],
-		['http://www.amazon.in/Apple-iPhone-6s-Gold-16GB/dp/B016QBTCMS/ref=sr_1_12?ie=UTF8&qid=1488806330&sr=8-12&keywords=apple+iphone+6s',"amazon"],
-		['http://www.amazon.in/Lenovo-K3NOTE-K3-Note-Black/dp/B01FDMCO44/ref=sr_1_1?s=electronics&ie=UTF8&qid=1488866836&sr=1-1&keywords=lenovo+k3+note',"amazon"],	
-		['http://www.amazon.in/Sony-inches-BRAVIA-KDL-50W800D-Android/dp/B01CE4FXSI/ref=sr_1_6?s=electronics&ie=UTF8&qid=1489562071&sr=1-6',"amazon"],
-		['http://www.amazon.in/LG-43LH547A-inches-Full-Black/dp/B01GNYE0TI/ref=sr_1_3?s=electronics&ie=UTF8&qid=1489562181&sr=1-3',"amazon"],
-		['http://www.amazon.in/Samsung-inches-40K5100-Full-Black/dp/B01M03XJOG/ref=sr_1_3?s=electronics&ie=UTF8&qid=1489562246&sr=1-3',"amazon"],		
-		['http://www.amazon.in/LG-JS-Q18AFXD-Inverter-Split-Aluminium/dp/B01MY7MKN7/ref=sr_1_1?s=kitchen&ie=UTF8&qid=1489562368&sr=1-1',"amazon"],
-		['http://www.amazon.in/IFB-IACS18KA3TP-Split-Rating-Copper/dp/B00LA41NJC/ref=sr_1_5?s=kitchen&ie=UTF8&qid=1489562419&sr=1-5',"amazon"],
-		['http://www.amazon.in/Videocon-VSN53-WV2-MDA-SDA-SDM-Rating/dp/B00UJJBA10/ref=sr_1_5?s=kitchen&ie=UTF8&qid=1489562467&sr=1-5',"amazon"],
+		# ['http://www.amazon.in/Samsung-Galaxy-S5-Shimmery-White/dp/B00JB6RXBI/ref=sr_1_3?ie=UTF8&qid=1488863718&sr=8-3&keywords=samsung+galaxy+s5',"amazon"],
+		# ['http://www.amazon.in/Apple-iPhone-6s-Gold-16GB/dp/B016QBTCMS/ref=sr_1_12?ie=UTF8&qid=1488806330&sr=8-12&keywords=apple+iphone+6s',"amazon"],
+		# ['http://www.amazon.in/Lenovo-K3NOTE-K3-Note-Black/dp/B01FDMCO44/ref=sr_1_1?s=electronics&ie=UTF8&qid=1488866836&sr=1-1&keywords=lenovo+k3+note',"amazon"],	
+		# ['http://www.amazon.in/Sony-inches-BRAVIA-KDL-50W800D-Android/dp/B01CE4FXSI/ref=sr_1_6?s=electronics&ie=UTF8&qid=1489562071&sr=1-6',"amazon"],
+		# ['http://www.amazon.in/LG-43LH547A-inches-Full-Black/dp/B01GNYE0TI/ref=sr_1_3?s=electronics&ie=UTF8&qid=1489562181&sr=1-3',"amazon"],
+		# ['http://www.amazon.in/Samsung-inches-40K5100-Full-Black/dp/B01M03XJOG/ref=sr_1_3?s=electronics&ie=UTF8&qid=1489562246&sr=1-3',"amazon"],		
+		# ['http://www.amazon.in/LG-JS-Q18AFXD-Inverter-Split-Aluminium/dp/B01MY7MKN7/ref=sr_1_1?s=kitchen&ie=UTF8&qid=1489562368&sr=1-1',"amazon"],
+		# ['http://www.amazon.in/IFB-IACS18KA3TP-Split-Rating-Copper/dp/B00LA41NJC/ref=sr_1_5?s=kitchen&ie=UTF8&qid=1489562419&sr=1-5',"amazon"],
+		# ['http://www.amazon.in/Videocon-VSN53-WV2-MDA-SDA-SDM-Rating/dp/B00UJJBA10/ref=sr_1_5?s=kitchen&ie=UTF8&qid=1489562467&sr=1-5',"amazon"],
 		]
 
 for link in links:
