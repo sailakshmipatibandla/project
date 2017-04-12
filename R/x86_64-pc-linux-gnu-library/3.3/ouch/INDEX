@@ -1,0 +1,16 @@
+anolis.ssd              Greater Antillean anolis lizard sexual size
+                        dimorphism data.
+ape2ouch                Convert an "ape" tree to an "ouch" tree.
+bimac                   Anolis bimaculatus lizard size data.
+brown                   Fit a Brownian-motion model of evolution along
+                        a phylogenetic tree
+browntree               Fitted phylogenetic Brownian motion model
+hansen                  Hansen model of evolution along a phylogenetic
+                        tree
+hansentree              hansen tree object
+hansentree-methods      Methods of the "hansentree" class
+ouch-package            Ornstein-Uhlenbeck methods for comparative
+                        phylogenetic hypotheses
+ouchtree                Phylogenetic tree object in 'ouch' format.
+paint                   Painting selective regimes on a phylogenetic
+                        tree.

@@ -79,9 +79,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'compare_prod',
-        'USER':'postgres', 
+        'USER':'innova', 
         'PASSWORD':'Innova123', 
-        'HOST':'localhost',
+        'HOST':'sailakshmiakhila.c9fc66eyon9l.ap-south-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }

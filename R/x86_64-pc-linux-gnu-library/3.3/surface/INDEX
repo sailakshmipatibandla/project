@@ -1,0 +1,19 @@
+convertTreeData         Utilities for Formatting Objects for SURFACE
+                        Analysis
+getAIC                  Akaike's Information Criterion for SURFACE
+                        Models
+getBranchTimes          Extract Branching Times from an 'ouch' Tree
+ouchDescendants         Obtain Descendants from an 'ouch' Tree
+propRegMatch            Similarity of Two Hansen Models
+repaint                 Paint the Branches of a Tree
+runSurface              Run All Steps of a SURFACE Analysis
+startingModel           Create an Initial Model for a SURFACE Analysis
+surface-package         Fitting Hansen Models to Investigate Convergent
+                        Evolution
+surfaceAICPlot          Plot the AIC Throughout a SURFACE Analysis
+surfaceBackward         Collapsing Convergent Regimes in a Hansen Model
+surfaceDemo             Tree and Data for Demonstrating SURFACE
+surfaceForward          Adding Regimes to a Hansen Model
+surfaceSimulate         Simulate Data for SURFACE
+surfaceSummary          Summarize SURFACE Output
+surfaceTreePlot         Visualize Results of a SURFACE Analysis

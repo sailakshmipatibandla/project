@@ -23,7 +23,7 @@ class Product:
 		return("Name: "+self.name.encode('UTF-8')+ "\r\nPrice: "+ self.price.encode('UTF-8')+ "\r\nRating: "+ self.rating.encode('UTF-8') + "\r\nDescription: "+ self.description.encode('UTF-8') + "\r\nKey_words: "+ self.key_words.encode('UTF-8') + "\r\n" )
 	def save(self):
 		try:
-			conn = psycopg2.connect("dbname='compare_prod' user='postgres' host='localhost' password='Innova123'")
+			conn = psycopg2.connect("dbname='compare_prod' user='innova' host='sailakshmiakhila.c9fc66eyon9l.ap-south-1.rds.amazonaws.com' password='Innova123'")
 			# print "connected"
 		except Exception as e:
 			# print "Unable to connect"	

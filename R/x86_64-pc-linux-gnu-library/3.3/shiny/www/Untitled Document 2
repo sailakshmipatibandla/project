@@ -1,0 +1,8 @@
+.someimage {
+  background-image: url('someimage.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.main-header .logo {
+  font-family: "Georgia", Times, "Times New Roman", serif;
+}

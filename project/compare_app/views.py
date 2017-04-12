@@ -13,6 +13,7 @@ def index(request):
 	# except Exception as e:
 	# 	print e
 	return render(request, 'compare_app/index.html')
+
 	# return render(request, 'compare_app/detail.html', {'product': product})
 def search (request):
 	results = []
