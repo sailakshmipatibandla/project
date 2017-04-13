@@ -3,7 +3,7 @@ library(shiny)
 library(shinydashboard)
 shinyUI(fluidPage(
     ui<-dashboardPage(skin = "blue",
-        dashboardHeader(title = tags$a(href='#',tags$img(src='1.gif',height=50,width=185,align = "fit"))),
+        dashboardHeader(title = tags$a(href='#',tags$img(src='http://ec2-52-66-29-252.ap-south-1.compute.amazonaws.com/1.gif',height=50,width=185,align = "fit"))),
     dashboardSidebar(
       width = 340,
         sidebarSearchForm(textId = "search", buttonId = "searchButton",
@@ -23,13 +23,13 @@ shinyUI(fluidPage(
         br(),
         br(),
         
-        tags$img(src="search.png",height=300,width=330)
+        tags$img(src="http://ec2-52-66-29-252.ap-south-1.compute.amazonaws.com/search.png",height=300,width=330)
     
       
     ),
     dashboardBody(
     
-      HTML('<center><img src="9.gif" height="80" width="450"></center>'),
+      HTML('<center><img src="http://ec2-52-66-29-252.ap-south-1.compute.amazonaws.com/9.gif" height="80" width="450"></center>'),
       #tags$img(src='9.gif', align = "left",height=80,width=450),
       #h1("Analytics on electronic products",align = "center"),
       br(),
@@ -38,8 +38,7 @@ shinyUI(fluidPage(
       br(),
       h4("Analyzing various parameters of a particular product for better understanding .", style = "font-family: 'times'; font-si16pt",align="center"),
       br(),
-      plotlyOutput("plots"),
-      tags$head(tags$script(src="clickhandler.js"))
+      plotlyOutput("plots")
       
     
   )

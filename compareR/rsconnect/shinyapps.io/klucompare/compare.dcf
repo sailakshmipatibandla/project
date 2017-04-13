@@ -3,8 +3,8 @@ title: compare
 account: klucompare
 server: shinyapps.io
 appId: 171967
-bundleId: 787796
+bundleId: 787835
 url: https://klucompare.shinyapps.io/compare/
-when: 1492079008.57618
+when: 1492083870.33589
 asMultiple: FALSE
 asStatic: FALSE
