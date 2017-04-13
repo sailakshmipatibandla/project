@@ -38,7 +38,8 @@ shinyUI(fluidPage(
       br(),
       h4("Analyzing various parameters of a particular product for better understanding .", style = "font-family: 'times'; font-si16pt",align="center"),
       br(),
-      plotlyOutput("plots")
+      plotlyOutput("plots"),
+      tags$head(tags$script(src="clickhandler.js"))
       
     
   )

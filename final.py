@@ -19,8 +19,8 @@ class Crawl:
 			self.logic = Snapdeal(self.starting_url)
 		elif self.site == "paytm":
 			self.logic = Paytm(self.starting_url)
-		#elif self.site == "amazon":
-			#self.logic = Amazon(self.starting_url)
+		elif self.site == "amazon":
+			self.logic = Amazon(self.starting_url)
 		return self.logic.crawl()
 
 try:
@@ -79,10 +79,10 @@ except Exception as e:
 # 		# ['http://www.amazon.in/IFB-IACS18KA3TP-Split-Rating-Copper/dp/B00LA41NJC/ref=sr_1_5?s=kitchen&ie=UTF8&qid=1489562419&sr=1-5',"amazon"],
 # 		# ['http://www.amazon.in/Videocon-VSN53-WV2-MDA-SDA-SDM-Rating/dp/B00UJJBA10/ref=sr_1_5?s=kitchen&ie=UTF8&qid=1489562467&sr=1-5',"amazon"],
 # 		]
-print links
-# for link in links:
-#  	crawler = Crawl(link[0][0], link[0][1])
-#  	data= crawler.crawl()
+
+for link in links:
+ 	crawler = Crawl(link[0][0], link[0][1])
+ 	data= crawler.crawl()
  	# print link[0]
  	# print data
 	# print 
